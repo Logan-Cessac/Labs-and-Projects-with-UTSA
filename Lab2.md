@@ -1,10 +1,10 @@
 # Lab: PowerShell Scripting
 ## About
-
 - Author: Logan Cessac
 - Course: IS 3513-01T
 - Professor: Eric Wooldridge
 - Date Created: July 5, 2026
+
 
 ## Method and Experience
 I had an interesting experience with PowerShell in this lab. Previous courses that I’ve taken have covered basic tasks in PowerShell, such as using “dir” to list the files in a directory. I’ve also had the privilege of learning about scripting in Linux based VM’s, such as in Ubuntu and Kali. However, I’ve never tried scripting with PowerShell. This makes more sense to me, because I use Windows-based computers far more often than I do Linux-based machines. This lab was a great opportunity for me to explore a different approach to scripting. I also liked the fact that the script applied directly to cyber security, because it involved scanning through the security log in Event Viewer. I can see how important this would be if I ever needed to process records in my event logs. I imagine that this applies for different areas of cyber, such as computer forensics, where I’d look for certain suspicious records, or traffic inspection, where I’d need to calculate statistics for the kinds of traffic traveling through a host or events happening on a host. 
@@ -19,8 +19,8 @@ This part took a lot of time. While the number kept changing, my Security log ha
 
 This was a very interesting experience, and I learned a lot about how PowerShell works by playing with it. I got to see both advantages and disadvantages with it. I look forward to using this tool in scripting as another tool in the arsenal. This showed me how I can take raw data and automate the process of breaking down the data into readable deductions. After my script ran with the proper formatting, I was able to immediately see summary statistics computed with thousands of log entries. This can save me a lot of time in the future. Even though it took my computer about 25 minutes to process all the log entries, it would take me days or longer to manually compute the same statistics.
 
-## Associated Research
 
+## Associated Research
 PowerShell is a wonderful tool for me to learn about, because of how central it is. It is able to manipulate Windows-based systems and many of the installed applications on the OS. It is a command line interface that has graphical capabilities, making it an easy-to-learn environment. It can execute not only simple commands, but heavier scripts, and it’s “built on the .NET Framework.” (Rose et. al, 2024) It has lately been seen as an “indispensable tool for system administrators, primarily due to its ability to create and execute ScriptBlocks, which are composable, reusable, and modifiable blocks of code.” (Rose et. al, 2024) These ScriptBlocks, as the author later mentions, are a “fundamental building block in the PowerShell scripting language and act as a versatile and reusable container for script code.” (Rose, Graham, and Kabban, 2024) This lab had me working with similar pieces of code, which PowerShell was able to manipulate and process with ease. ScriptBlocks are a tool that enables compartmentalizing code, much like a custom function. One can create a ScriptBlock and then use it several times in similar areas of code. This makes PowerShell a critical tool to know for automation and penetration testing. 
 
 However, with the powerful capabilities of PowerShell comes powerful risks. ScriptBlocks can be snuck past detection systems through a process called ScriptBlock Smuggling, which exploits the flexibility of ScriptBlocks. This process requires the tools that PowerShell provides. One of the main concerns, though, is that many attacks can utilize PowerShell to aid in the spread and masking of harmful code. For example, in a file-less attack, an attacker can insert “malicious code into the victim's command line prompt, which remains undetected by the victim's anti-virus or firewall with the help of legitimate tools like PowerShell.” (Sankha and Nisha, 2022) Because of this risk, many businesses and individuals block unnecessary PowerShell capabilities to reduce their attack front. Another concern is the amount of access that PowerShell has. Not only is it a powerful tool, but it has access to virtually every aspect of a Windows-based host. In the case of advanced persistent threats, attackers will use PowerShell to control hosts, and to “inject Shellcode into the victim’s computer.” (Yong and Zhou, 2021)
@@ -28,7 +28,7 @@ However, with the powerful capabilities of PowerShell comes powerful risks. Scri
 The goal is to enforce least privilege for every user in a network. This is because unnecessary privilege can provide a vulnerability, increasing risk to a system or network. One way to prevent attacks from using PowerShell on a target host is to limit its capabilities. In fact, it “can be used in constrained language mode to limit PowerShell to basic functionality.” (Sankha and Nisha, 2022) Windows provides native tools to carry this out. However, this can’t prevent all attacks. There are many approaches to mitigating this area of risk, such as “detection models based on real-time operation and machine learning.” (Yong and Zhou, 2021) There are problems with this like script obfuscation, which require de-obfuscating detection models. This is just one example of many approaches to mitigating this risk. Some employ very advanced methods to overcome many hurdles placed by the powerful nature of PowerShell. This requires many individuals to keep exploring options to be able to protect systems as the frontier of cyber threats continues to reform.   
 
 ## Script Code
-This is the code that was used to process the records:
+This is the code that was used to process the records. It is designed to read the events in the "Security" log in Windows Event Viewer and export them in csv format. Then it displays some basic information about the records.
 ```powershell
 $Events = Get-WinEvent -LogName 'Security'
 $EventsNum = $Events.Count
@@ -49,6 +49,7 @@ Write-Host "Number of Audit Failures: $FailureNum failures of $EventsNum entries
 Write-Host "Number of Audit Successes: $SuccessNum successes of $EventsNum entries Most common Event ID: $SuccessId"
 ```
 
+
 ## Appendices
 Figure 1. Open Script and Results in Standard Output (first run)
 <img width="973" height="521" alt="image" src="https://github.com/user-attachments/assets/0253a416-7c31-4512-9a79-075340648e49" />
@@ -58,6 +59,14 @@ Figure 3: Open Script and Results in Standard Output (second run)
 <img width="979" height="496" alt="image" src="https://github.com/user-attachments/assets/445d4630-af92-441b-aab6-fd2c433520b1" />
 Figure 4: “Lab2” folder that contains all files used in this lab
 <img width="979" height="201" alt="image" src="https://github.com/user-attachments/assets/2fc23d3d-eaaf-4e3c-a1e9-46fac2c6b16b" />
+
+
+## Bibliography
+- Rose, A. J., Graham, S. R., Schubert Kabban, C.,M., Krasnov, J. J., & Henry, W. C. (2024). ScriptBlock smuggling: Uncovering stealthy evasion techniques in PowerShell and .NET environments. Journal of Cybersecurity and Privacy, 4(2), 153. doi:https://doi.org/10.3390/jcp4020008
+- Fang, Y., Zhou, X., & Huang, C. (2021). Effective method for detecting malicious PowerShell scripts based on hybrid features. Neurocomputing, 448, 30–39. doi:10.1016/j.neucom.2021.03.117
+- Chakraborty, S., & Nisha, T. N. (2022). Next generation proactive cyber threat hunting: A complete framework. AIP Conference Proceedings, 2519(1), 030093. doi:10.1063/5.0109674
+
+
 
 
 
