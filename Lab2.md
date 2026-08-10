@@ -4,6 +4,7 @@
 - Course: IS 3513-01T
 - Professor: Eric Wooldridge
 - Date Created: July 5, 2026
+- Purpose: Learn how to create and use PowerShell scripts
 
 
 ## Method and Experience
@@ -48,18 +49,18 @@ $SuccessId = ($Successes | Group-Object Id | Sort-Object Count -Descending | Sel
 Write-Host "Number of Audit Failures: $FailureNum failures of $EventsNum entries Most common Event ID: $FailId"
 Write-Host "Number of Audit Successes: $SuccessNum successes of $EventsNum entries Most common Event ID: $SuccessId"
 ```
-
-
-## Appendices
-Figure 1. Open Script and Results in Standard Output (first run)
-<img width="973" height="521" alt="image" src="https://github.com/user-attachments/assets/0253a416-7c31-4512-9a79-075340648e49" />
-Figure 2. Security Log .csv File Output (the actual .csv file is attached) 
-<img width="976" height="520" alt="image" src="https://github.com/user-attachments/assets/d31bbc35-8b91-4b30-beb9-b7cdad77c432" />
-Figure 3: Open Script and Results in Standard Output (second run)
-<img width="979" height="496" alt="image" src="https://github.com/user-attachments/assets/445d4630-af92-441b-aab6-fd2c433520b1" />
-Figure 4: “Lab2” folder that contains all files used in this lab
-<img width="979" height="201" alt="image" src="https://github.com/user-attachments/assets/2fc23d3d-eaaf-4e3c-a1e9-46fac2c6b16b" />
-
+## Appendix
+<details>
+    <summary> Click to view Figures</summary>
+    Figure 1. Open Script and Results in Standard Output (first run)
+    <img width="973" height="521" alt="image" src="https://github.com/user-attachments/assets/0253a416-7c31-4512-9a79-075340648e49" />
+    Figure 2. Security Log .csv File Output (the actual .csv file is attached) 
+    <img width="976" height="520" alt="image" src="https://github.com/user-attachments/assets/d31bbc35-8b91-4b30-beb9-b7cdad77c432" />
+    Figure 3: Open Script and Results in Standard Output (second run)
+    <img width="979" height="496" alt="image" src="https://github.com/user-attachments/assets/445d4630-af92-441b-aab6-fd2c433520b1" />
+    Figure 4: “Lab2” folder that contains all files used in this lab
+    <img width="979" height="201" alt="image" src="https://github.com/user-attachments/assets/2fc23d3d-eaaf-4e3c-a1e9-46fac2c6b16b" />
+</details>
 
 ## Bibliography
 - Rose, A. J., Graham, S. R., Schubert Kabban, C.,M., Krasnov, J. J., & Henry, W. C. (2024). ScriptBlock smuggling: Uncovering stealthy evasion techniques in PowerShell and .NET environments. Journal of Cybersecurity and Privacy, 4(2), 153. doi:https://doi.org/10.3390/jcp4020008
