@@ -6,7 +6,7 @@
 - Date Created: July 25, 2026
 - Purpose: Learn how to use tools to decrypt passwords
 
-NOTE: I've hidden the following information to prevent releasing answers to the lab questions. The instructor expects that each student find these answers themself.
+NOTE: I've hidden the following information to prevent releasing answers to the lab questions. The instructor expects that each student find these answers.
 - Real passwords for each cracked account
 - Filenames and paths that I used to answer questions
 - Chosen tool to crack personal password file
